@@ -392,6 +392,8 @@
 
     move-result-object v1
 
+    invoke-virtual {v0, v1}, Landroid/service/quicksettings/Tile;->setLabel(Ljava/lang/CharSequence;)V
+
     .line 205
     invoke-static {p0}, Lcom/motorola/dolby/dolbyui/DsPersistentSettings;->isAuxLineConnected(Landroid/content/Context;)Z
 
@@ -424,24 +426,9 @@
 
     invoke-static {p1, v2, v8, v9}, Lcom/motorola/dolby/dolbyui/AudioEffectDynamicPrefProvider;->getStringValue(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
-
-    .line 215
-    invoke-virtual {p0}, Lcom/motorola/dolby/dolbyui/AudioEffectTileService;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    new-array v8, v5, [Ljava/lang/Object;
-
-    aput-object v1, v8, v6
-
-    aput-object p1, v8, v7
-
-    invoke-virtual {v2, v4, v8}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/service/quicksettings/Tile;->setLabel(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/service/quicksettings/Tile;->setSubtitle(Ljava/lang/CharSequence;)V
 
     .line 217
     invoke-virtual {p0}, Lcom/motorola/dolby/dolbyui/AudioEffectTileService;->getApplicationContext()Landroid/content/Context;
@@ -528,15 +515,6 @@
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 233
-    invoke-virtual {p0}, Lcom/motorola/dolby/dolbyui/AudioEffectTileService;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    aput-object v1, v5, v6
-
     .line 234
     invoke-virtual {p0}, Lcom/motorola/dolby/dolbyui/AudioEffectTileService;->getApplicationContext()Landroid/content/Context;
 
@@ -550,38 +528,17 @@
 
     invoke-virtual {v1, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
-
-    aput-object v1, v5, v7
-
-    .line 233
-    invoke-virtual {p1, v4, v5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Landroid/service/quicksettings/Tile;->setLabel(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p1}, Landroid/service/quicksettings/Tile;->setSubtitle(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
     .line 238
     :cond_2
-    invoke-virtual {p0}, Lcom/motorola/dolby/dolbyui/AudioEffectTileService;->getResources()Landroid/content/res/Resources;
+    const-string p1, ""
 
-    move-result-object p1
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    aput-object v1, v5, v6
-
-    const-string v1, " "
-
-    aput-object v1, v5, v7
-
-    invoke-virtual {p1, v4, v5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Landroid/service/quicksettings/Tile;->setLabel(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p1}, Landroid/service/quicksettings/Tile;->setSubtitle(Ljava/lang/CharSequence;)V
 
     .line 241
     :goto_1
